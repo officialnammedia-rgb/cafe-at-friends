@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F6F1E7">
+  <meta name="description" content="Coffee Under Palms — Good coffee. No rush. A space to pause. Single-estate Indian Arabica served beneath palms in Vasant Kunj, New Delhi.">
+  <meta property="og:title" content="Coffee Under Palms — Good Coffee. No Rush.">
+  <meta property="og:description" content="Single-estate Arabica from Karnataka's hills. A calm green corner in Vasant Kunj.">
+  <title>Coffee Under Palms — Good Coffee. No Rush. A Space to Pause.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:wght@300..600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/webp" href="logo.webp">
+  <link rel="apple-touch-icon" href="logo.webp">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="loading">
+
+  <!-- ============== LOADER ============== -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <!-- Soft sun-ray halo behind the palm -->
+    <div class="loader__sun" aria-hidden="true">
+      <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#F4D58D" stop-opacity="0.55"/>
+            <stop offset="55%" stop-color="#E7C078" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="#E7C078" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="300" cy="300" r="280" fill="url(#sunGlow)"/>
+        <g stroke="#C99C5E" stroke-width="1.2" stroke-linecap="round" opacity="0.55">
+          <line x1="300" y1="60"  x2="300" y2="110"/>
+          <line x1="300" y1="490" x2="300" y2="540"/>
+          <line x1="60"  y1="300" x2="110" y2="300"/>
+          <line x1="490" y1="300" x2="540" y2="300"/>
+          <line x1="130" y1="130" x2="168" y2="168"/>
+          <line x1="432" y1="432" x2="470" y2="470"/>
+          <line x1="470" y1="130" x2="432" y2="168"/>
+          <line x1="168" y1="432" x2="130" y2="470"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="loader__palm">
+      <!-- Clean recognizable palm tree silhouette -->
+      <svg viewBox="0 0 320 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g fill="currentColor">
+          <!-- Trunk: tapered, slightly curved -->
+          <path d="M148 118
+                   C 144 160 140 210 136 270
+                   C 134 300 132 330 130 360
+                   L 174 360
+                   C 172 330 170 300 168 270
+                   C 164 210 160 160 156 118 Z"/>
+        </g>
+
+        <!-- Trunk segment rings -->
+        <g fill="#F6F1E7" opacity="0.45">
+          <path d="M144 158 Q 152 162 160 158 L 161 164 Q 152 168 143 164 Z"/>
+          <path d="M141 200 Q 152 204 163 200 L 164 206 Q 152 210 140 206 Z"/>
+          <path d="M138 244 Q 152 248 166 244 L 167 250 Q 152 254 137 250 Z"/>
+          <path d="M135 288 Q 152 292 169 288 L 170 294 Q 152 298 134 294 Z"/>
+          <path d="M132 332 Q 152 336 172 332 L 173 338 Q 152 342 131 338 Z"/>
+        </g>
+
+        <!-- FRONDS — each a tapered leaf radiating from the crown -->
+        <g transform="translate(152 112)" fill="currentColor">
+          <g transform="rotate(0)"><path d="M-7 0 Q -16 -36 -10 -78 Q -4 -100 0 -116 Q 4 -100 10 -78 Q 16 -36 7 0 Z"/></g>
+          <g transform="rotate(45)"><path d="M-7 0 Q -18 -42 -12 -90 Q -6 -110 0 -126 Q 6 -110 12 -90 Q 18 -42 7 0 Z"/></g>
+          <g transform="rotate(-45)"><path d="M-7 0 Q -18 -42 -12 -90 Q -6 -110 0 -126 Q 6 -110 12 -90 Q 18 -42 7 0 Z"/></g>
+          <g transform="rotate(90)"><path d="M-7 0 Q -18 -46 -12 -98 Q -6 -120 0 -136 Q 6 -120 12 -98 Q 18 -46 7 0 Z"/></g>
+          <g transform="rotate(-90)"><path d="M-7 0 Q -18 -46 -12 -98 Q -6 -120 0 -136 Q 6 -120 12 -98 Q 18 -46 7 0 Z"/></g>
+          <g transform="rotate(130)"><path d="M-6 0 Q -14 -36 -8 -76 Q -3 -94 0 -108 Q 3 -94 8 -76 Q 14 -36 6 0 Z"/></g>
+          <g transform="rotate(-130)"><path d="M-6 0 Q -14 -36 -8 -76 Q -3 -94 0 -108 Q 3 -94 8 -76 Q 14 -36 6 0 Z"/></g>
+
+          <!-- Crown + coconuts -->
+          <circle cx="0" cy="0" r="7"/>
+          <circle cx="-8" cy="6" r="3.6"/>
+          <circle cx="8" cy="6" r="3.6"/>
+          <circle cx="0" cy="10" r="3.6"/>
+        </g>
+
+        <!-- Leaflet serrations (light dots) along each frond -->
+        <g transform="translate(152 112)" fill="#F6F1E7" opacity="0.5">
+          <g transform="rotate(0)">
+            <circle cx="-4" cy="-30" r="1.8"/><circle cx="4" cy="-30" r="1.8"/>
+            <circle cx="-3" cy="-55" r="1.8"/><circle cx="3" cy="-55" r="1.8"/>
+            <circle cx="-2" cy="-80" r="1.8"/><circle cx="2" cy="-80" r="1.8"/>
+          </g>
+          <g transform="rotate(45)">
+            <circle cx="-4" cy="-30" r="1.8"/><circle cx="4" cy="-30" r="1.8"/>
+            <circle cx="-3" cy="-58" r="1.8"/><circle cx="3" cy="-58" r="1.8"/>
+            <circle cx="-2" cy="-88" r="1.8"/><circle cx="2" cy="-88" r="1.8"/>
+          </g>
+          <g transform="rotate(-45)">
+            <circle cx="-4" cy="-30" r="1.8"/><circle cx="4" cy="-30" r="1.8"/>
+            <circle cx="-3" cy="-58" r="1.8"/><circle cx="3" cy="-58" r="1.8"/>
+            <circle cx="-2" cy="-88" r="1.8"/><circle cx="2" cy="-88" r="1.8"/>
+          </g>
+          <g transform="rotate(90)">
+            <circle cx="-4" cy="-30" r="1.8"/><circle cx="4" cy="-30" r="1.8"/>
+            <circle cx="-3" cy="-62" r="1.8"/><circle cx="3" cy="-62" r="1.8"/>
+            <circle cx="-2" cy="-96" r="1.8"/><circle cx="2" cy="-96" r="1.8"/>
+          </g>
+          <g transform="rotate(-90)">
+            <circle cx="-4" cy="-30" r="1.8"/><circle cx="4" cy="-30" r="1.8"/>
+            <circle cx="-3" cy="-62" r="1.8"/><circle cx="3" cy="-62" r="1.8"/>
+            <circle cx="-2" cy="-96" r="1.8"/><circle cx="2" cy="-96" r="1.8"/>
+          </g>
+          <g transform="rotate(130)">
+            <circle cx="-3" cy="-30" r="1.8"/><circle cx="3" cy="-30" r="1.8"/>
+            <circle cx="-2" cy="-55" r="1.8"/><circle cx="2" cy="-55" r="1.8"/>
+            <circle cx="-1" cy="-80" r="1.8"/><circle cx="1" cy="-80" r="1.8"/>
+          </g>
+          <g transform="rotate(-130)">
+            <circle cx="-3" cy="-30" r="1.8"/><circle cx="3" cy="-30" r="1.8"/>
+            <circle cx="-2" cy="-55" r="1.8"/><circle cx="2" cy="-55" r="1.8"/>
+            <circle cx="-1" cy="-80" r="1.8"/><circle cx="1" cy="-80" r="1.8"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Real CUP logo flash, appears mid-animation -->
+    <div class="loader__logo" aria-hidden="true">
+      <img src="logo.webp" alt="" width="96" height="96"/>
+    </div>
+
+    <div class="loader__brand">
+      <span class="name">Coffee Under Palms</span>
+      <span class="tag">— a space to pause —</span>
+    </div>
+    <div class="loader__bar" aria-hidden="true"></div>
+  </div>
+
+  <!-- ============== SITE ============== -->
+  <div class="site" id="site">
+
+    <!-- ============== NAV ============== -->
+    <header class="nav" id="nav">
+      <a href="#top" class="nav__brand" aria-label="Coffee Under Palms — home">
+        <span class="mark"><img src="logo.webp" alt="CUP — Coffee Under Palms logo" width="40" height="40"/></span>
+        <span>Coffee Under Palms</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#about">Story</a>
+        <a href="#signatures">Signatures</a>
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Spaces</a>
+        <a href="#reserve">Reserve</a>
+        <a href="#contact">Visit</a>
+      </nav>
+      <div class="nav__cta">
+        <a class="nav__call" href="tel:+919958361515">+91 99583 61515</a>
+        <a class="btn btn--primary" href="#reserve">Book a table</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      </div>
+    </header>
+
+    <!-- ============== HERO ============== -->
+    <section class="hero" id="top">
+      <div class="hero__bg">
+        <img src="https://images.unsplash.com/photo-1774627895861-86592e004498?auto=format&fit=crop&w=2400&q=85" alt="Palm-lined boulevard with outdoor café seating and golden sun rays" loading="eager" fetchpriority="high"/>
+        <div class="hero__rays" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero__inner">
+        <h1 class="display hero__title">
+          <span class="line"><span>Coffee</span></span>
+          <span class="line"><span>under</span></span>
+          <span class="line"><span><em>palms.</em></span></span>
+        </h1>
+        <div>
+          <p class="hero__tag">— Good coffee. No rush. A space to pause.</p>
+          <p class="hero__lead">Single‑estate 100% Arabica, grown slow in Karnataka's hills and brewed beneath palms in a quiet corner of Vasant Kunj. For slow mornings, deep work and unhurried conversations.</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary btn--lg" href="#reserve">Reserve a table
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a class="btn btn--ghost btn--lg" href="#menu">Explore the menu</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__meta">
+        <div class="hero__loc">
+          <span>Oasis Bhawan · Vasant Kunj</span>
+          <strong>New Delhi 110070 · 28.5273°N 77.1582°E</strong>
+        </div>
+        <div class="hero__rating" title="Loved by neighbours">
+          <span class="stars">★ ★ ★ ★ ★</span>
+          <span class="text">4.9 · 800+ reviews</span>
+        </div>
+        <div class="hero__scroll" aria-hidden="true">
+          <span>Scroll</span>
+          <span class="line"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== MARQUEE ============== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Single‑estate Arabica <i class="dot"></i> Slow mornings <i class="dot"></i> Deep work <i class="dot"></i> First dates <i class="dot"></i> No rush <i class="dot"></i> Cocoa &amp; almond notes <i class="dot"></i></span>
+        <span>Single‑estate Arabica <i class="dot"></i> Slow mornings <i class="dot"></i> Deep work <i class="dot"></i> First dates <i class="dot"></i> No rush <i class="dot"></i> Cocoa &amp; almond notes <i class="dot"></i></span>
+      </div>
+    </div>
+
+    <!-- ============== ABOUT ============== -->
+    <section class="about section-pad" id="about">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__copy reveal">
+            <span class="eyebrow">Our story</span>
+            <h2 class="display">A neighbourhood<br><em>escape</em>, framed by palms.</h2>
+            <p>Tucked into Oasis Bhawan, our café was built around a simple idea — that good coffee deserves time, and the people drinking it deserve a quiet place to meet it. Warm wood, soft light, and palms framing every corner.</p>
+            <p>Our beans are single‑estate, 100% Arabica, sourced from the misty hills of Karnataka. Slow‑grown, hand‑picked, small‑batch roasted. What you taste is rich aroma, full body, with notes of <em class="serif-i">cocoa, roasted almond and a hint of pepper</em>.</p>
+            <div class="about__notes">
+              <div class="note"><div class="k">Origin</div><div class="v">Karnataka hills</div></div>
+              <div class="note"><div class="k">Variety</div><div class="v">100% Arabica</div></div>
+              <div class="note"><div class="k">Roast</div><div class="v">Small‑batch</div></div>
+              <div class="note"><div class="k">Body</div><div class="v">Full, rounded</div></div>
+            </div>
+          </div>
+          <div class="about__media reveal delay-2">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1400&q=80" alt="Latte art on a wooden table beneath warm lamp light" loading="lazy"/>
+            <div class="about__badge" aria-hidden="true">
+              <svg viewBox="0 0 200 200">
+                <defs>
+                  <path id="circle" d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0"/>
+                </defs>
+                <text font-family="DM Mono" font-size="11" letter-spacing="6" fill="#F6F1E7">
+                  <textPath href="#circle">EST · 2024 · COFFEE UNDER PALMS · NEW DELHI · </textPath>
+                </text>
+              </svg>
+              <span>est.<br>2024</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== SIGNATURES ============== -->
+    <section class="signatures" id="signatures">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow center">— signatures —</span>
+          <h2 class="display">Six cups we'd <em>pour you</em> first.</h2>
+          <p>Crafted slowly with our single‑estate Arabica. Each one a small ritual.</p>
+        </div>
+
+        <div class="sigs">
+          <article class="sig reveal">
+            <div class="sig__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h13a3 3 0 0 1 0 6h-1"/><path d="M4 8v6a4 4 0 0 0 4 4h5a4 4 0 0 0 4-4"/><path d="M8 3v2M11 3v2M14 3v2"/></svg>
+            </div>
+            <div class="sig__num">N° 01</div>
+            <h3 class="sig__name">Cortado</h3>
+            <div class="sig__price">₹ 180</div>
+            <p class="sig__desc">Equal parts espresso and warm milk. Quiet, balanced — the pour that taught us patience.</p>
+            <span class="sig__hover">— small but seen —</span>
+          </article>
+
+          <article class="sig reveal delay-1">
+            <div class="sig__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h13a3 3 0 0 1 0 6h-1"/><path d="M4 8v6a4 4 0 0 0 4 4h5a4 4 0 0 0 4-4"/><path d="M9 4c0 1 1 1 1 2s-1 1-1 2M13 4c0 1 1 1 1 2s-1 1-1 2"/></svg>
+            </div>
+            <div class="sig__num">N° 02</div>
+            <h3 class="sig__name">Spanish Latte</h3>
+            <div class="sig__price">₹ 220</div>
+            <p class="sig__desc">Espresso, condensed milk and steamed milk poured cold over ice. Sweet, silken, sun‑lit.</p>
+            <span class="sig__hover">— iced &amp; sweet —</span>
+          </article>
+
+          <article class="sig reveal delay-2">
+            <div class="sig__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M9 9c2 1 4 1 6 0M9 15c2 1 4 1 6 0M12 3v18"/></svg>
+            </div>
+            <div class="sig__num">N° 03</div>
+            <h3 class="sig__name">Single Origin Pour Over</h3>
+            <div class="sig__price">₹ 260</div>
+            <p class="sig__desc">A slow V60 of our Karnataka estate. Cocoa, roasted almond, a whisper of pepper.</p>
+            <span class="sig__hover">— hand poured —</span>
+          </article>
+
+          <article class="sig reveal">
+            <div class="sig__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 10h16M6 10v8a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-8"/><path d="M9 6c1 1 2 1 3 0s2-1 3 0"/></svg>
+            </div>
+            <div class="sig__num">N° 04</div>
+            <h3 class="sig__name">Affogato</h3>
+            <div class="sig__price">₹ 280</div>
+            <p class="sig__desc">A scoop of vanilla bean gelato drowned in a fresh shot. Warm meets cold meets joy.</p>
+            <span class="sig__hover">— dessert &amp; coffee —</span>
+          </article>
+
+          <article class="sig reveal delay-1">
+            <div class="sig__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h14v3a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4z"/><path d="M5 9v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9"/><path d="M9 13h6M9 16h6"/></svg>
+            </div>
+            <div class="sig__num">N° 05</div>
+            <h3 class="sig__name">Cold Brew</h3>
+            <div class="sig__price">₹ 200</div>
+            <p class="sig__desc">Steeped for sixteen unhurried hours. Smooth, low‑acid, deeply chocolatey.</p>
+            <span class="sig__hover">— 16h slow steep —</span>
+          </article>
+
+          <article class="sig reveal delay-2">
+            <div class="sig__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3l1 4M18 3l-1 4M5 7h14l-1 12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 7z"/><path d="M9 12c1 1 5 1 6 0"/></svg>
+            </div>
+            <div class="sig__num">N° 06</div>
+            <h3 class="sig__name">House Mocha</h3>
+            <div class="sig__price">₹ 240</div>
+            <p class="sig__desc">Espresso, steamed milk, dark Belgian chocolate, a thread of orange peel. Our best secret.</p>
+            <span class="sig__hover">— house special —</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== MENU ============== -->
+    <section class="menu" id="menu">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow center">— the carte —</span>
+          <h2 class="display">Everything we <em>pour, plate</em><br>and serve.</h2>
+          <p>From espresso to artisan plates. Choose a chapter, or scroll the whole story.</p>
+        </div>
+
+        <div class="menu__filters" id="menuFilters" role="tablist">
+          <button class="chip is-active" data-cat="all">All</button>
+          <button class="chip" data-cat="hot">Hot Beverages</button>
+          <button class="chip" data-cat="ice">Ice Beverages</button>
+          <button class="chip" data-cat="smoothies">Smoothies &amp; Juices</button>
+          <button class="chip" data-cat="soups">Soups &amp; Greens</button>
+          <button class="chip" data-cat="benedict">Benedict &amp; Eggs</button>
+          <button class="chip" data-cat="sandwich">Panini &amp; Sourdough</button>
+          <button class="chip" data-cat="burger">Burgers &amp; Hotdogs</button>
+          <button class="chip" data-cat="pizza">Pizza</button>
+          <button class="chip" data-cat="grills">Turkish Grills</button>
+          <button class="chip" data-cat="pasta">Pasta &amp; Mains</button>
+          <button class="chip" data-cat="dessert">Desserts</button>
+          <button class="chip" data-cat="coolers">Coolers &amp; Shakes</button>
+        </div>
+
+        <div class="menu__grid" id="menuGrid">
+
+          <!-- LEFT COLUMN -->
+          <div class="menu__col">
+            <h3 data-section="hot">Hot Beverages</h3>
+            <div class="menu__item" data-cat="hot"><div><div class="name">Cortado</div><div class="desc">Espresso & warm milk, balanced</div></div><div class="price">₹ 180</div></div>
+            <div class="menu__item" data-cat="hot"><div><div class="name">Cappuccino</div><div class="desc">Foam‑lifted, classic</div></div><div class="price">₹ 200</div></div>
+            <div class="menu__item" data-cat="hot"><div><div class="name">Americano</div><div class="desc">Long pour, clean finish</div></div><div class="price">₹ 160</div></div>
+            <div class="menu__item" data-cat="hot"><div><div class="name">Flat White</div><div class="desc">Velvety microfoam</div></div><div class="price">₹ 220</div></div>
+            <div class="menu__item" data-cat="hot"><div><div class="name">Latte</div><div class="desc">Soft, milk‑forward</div></div><div class="price">₹ 190</div></div>
+            <div class="menu__item" data-cat="hot"><div><div class="name">Macchiato</div><div class="desc">Espresso, marked with foam</div></div><div class="price">₹ 170</div></div>
+
+            <h3 data-section="ice">Ice Beverages</h3>
+            <div class="menu__item" data-cat="ice"><div><div class="name">Spanish Latte</div><div class="desc">Sweet condensed, iced</div></div><div class="price">₹ 220</div></div>
+            <div class="menu__item" data-cat="ice"><div><div class="name">Cold Brew</div><div class="desc">16h slow steep</div></div><div class="price">₹ 200</div></div>
+            <div class="menu__item" data-cat="ice"><div><div class="name">Iced Latte</div><div class="desc">Espresso & cold milk</div></div><div class="price">₹ 210</div></div>
+            <div class="menu__item" data-cat="ice"><div><div class="name">Lemon Ice Tea</div><div class="desc">Fresh brewed, citrus</div></div><div class="price">₹ 150</div></div>
+            <div class="menu__item" data-cat="ice"><div><div class="name">Iced Americano</div><div class="desc">Bold, on the rocks</div></div><div class="price">₹ 190</div></div>
+
+            <h3 data-section="smoothies">Smoothies & Juices</h3>
+            <div class="menu__item" data-cat="smoothies"><div><div class="name">Avocado Honey</div><div class="desc">Creamy, raw honey</div></div><div class="price">₹ 180</div></div>
+            <div class="menu__item" data-cat="smoothies"><div><div class="name">Banana Dates</div><div class="desc">Naturally sweet</div></div><div class="price">₹ 170</div></div>
+            <div class="menu__item" data-cat="smoothies"><div><div class="name">Mixed Berry</div><div class="desc">Antioxidant brew</div></div><div class="price">₹ 160</div></div>
+            <div class="menu__item" data-cat="smoothies"><div><div class="name">Watermelon Juice</div><div class="desc">Cold pressed</div></div><div class="price">₹ 140</div></div>
+            <div class="menu__item" data-cat="smoothies"><div><div class="name">Orange Juice</div><div class="desc">Hand squeezed</div></div><div class="price">₹ 130</div></div>
+            <div class="menu__item" data-cat="smoothies"><div><div class="name">Mixed Fruit</div><div class="desc">Seasonal selection</div></div><div class="price">₹ 160</div></div>
+
+            <h3 data-section="soups">Soups & Greens</h3>
+            <div class="menu__item" data-cat="soups"><div><div class="name">House Salad</div><div class="desc">Mesclun, citrus, herbs</div></div><div class="price">₹ 350</div></div>
+            <div class="menu__item" data-cat="soups"><div><div class="name">Green Soup</div><div class="desc">Spinach, basil, cream</div></div><div class="price">₹ 280</div></div>
+            <div class="menu__item" data-cat="soups"><div><div class="name">Avocado & Feta</div><div class="desc">Sumac, olive, lime</div></div><div class="price">₹ 420</div></div>
+
+            <h3 data-section="benedict">Benedict & Eggs</h3>
+            <div class="menu__item" data-cat="benedict"><div><div class="name">Fried Chicken Benedict</div><div class="desc">Sourdough, hollandaise</div></div><div class="price">₹ 435</div></div>
+            <div class="menu__item" data-cat="benedict"><div><div class="name">Smoked Chicken Benedict</div><div class="desc">House smoked, chive</div></div><div class="price">₹ 435</div></div>
+            <div class="menu__item" data-cat="benedict"><div><div class="name">Scrambled Eggs</div><div class="desc">Slow, buttered</div></div><div class="price">₹ 360</div></div>
+            <div class="menu__item" data-cat="benedict"><div><div class="name">Truffle Scramble</div><div class="desc">Black truffle oil</div></div><div class="price">₹ 415</div></div>
+            <div class="menu__item" data-cat="benedict"><div><div class="name">Soufflé Omelette</div><div class="desc">Cloud‑light, herb butter</div></div><div class="price">₹ 380</div></div>
+          </div>
+
+          <!-- RIGHT COLUMN -->
+          <div class="menu__col">
+            <h3 data-section="sandwich">Panini, Sourdough & Wraps</h3>
+            <div class="menu__item" data-cat="sandwich"><div><div class="name">Multigrain Panini</div><div class="desc">Pesto, sundried tomato</div></div><div class="price">₹ 390</div></div>
+            <div class="menu__item" data-cat="sandwich"><div><div class="name">Sourdough Sandwich</div><div class="desc">Slow ferment, gruyère</div></div><div class="price">₹ 420</div></div>
+            <div class="menu__item" data-cat="sandwich"><div><div class="name">Mediterranean Wrap</div><div class="desc">Hummus, falafel, slaw</div></div><div class="price">₹ 380</div></div>
+            <div class="menu__item" data-cat="sandwich"><div><div class="name">Smoked Chicken Wrap</div><div class="desc">Avocado, lime, chipotle</div></div><div class="price">₹ 450</div></div>
+
+            <h3 data-section="burger">Burger & Hotdogs</h3>
+            <div class="menu__item" data-cat="burger"><div><div class="name">Gourmet Burger</div><div class="desc">Aged cheddar, brioche</div></div><div class="price">₹ 480</div></div>
+            <div class="menu__item" data-cat="burger"><div><div class="name">Classic Hotdog</div><div class="desc">Smoked sausage, mustard</div></div><div class="price">₹ 350</div></div>
+
+            <h3 data-section="pizza">Pizza</h3>
+            <div class="menu__item" data-cat="pizza"><div><div class="name">Margherita</div><div class="desc">San Marzano, basil</div></div><div class="price">₹ 420</div></div>
+            <div class="menu__item" data-cat="pizza"><div><div class="name">Truffle Mushroom</div><div class="desc">Cremini, parmesan, truffle</div></div><div class="price">₹ 650</div></div>
+            <div class="menu__item" data-cat="pizza"><div><div class="name">Smoked Chicken Pizza</div><div class="desc">Caramelised onion, BBQ</div></div><div class="price">₹ 560</div></div>
+
+            <h3 data-section="grills">Turkish Grills</h3>
+            <div class="menu__item" data-cat="grills"><div><div class="name">Turkish Kebab</div><div class="desc">Charcoal grilled, sumac</div></div><div class="price">₹ 520</div></div>
+            <div class="menu__item" data-cat="grills"><div><div class="name">Grilled Chicken</div><div class="desc">Yoghurt marinated, herbs</div></div><div class="price">₹ 480</div></div>
+
+            <h3 data-section="pasta">Artisan Pasta & Mains</h3>
+            <div class="menu__item" data-cat="pasta"><div><div class="name">Aglio e Olio</div><div class="desc">Garlic, chilli, parsley</div></div><div class="price">₹ 450</div></div>
+            <div class="menu__item" data-cat="pasta"><div><div class="name">Truffle Mushroom Pasta</div><div class="desc">Cream, thyme, truffle</div></div><div class="price">₹ 550</div></div>
+            <div class="menu__item" data-cat="pasta"><div><div class="name">Slow Braised Lamb</div><div class="desc">Polenta, red wine jus</div></div><div class="price">₹ 750</div></div>
+            <div class="menu__item" data-cat="pasta"><div><div class="name">Pan‑Seared Fish</div><div class="desc">Brown butter, capers</div></div><div class="price">₹ 680</div></div>
+
+            <h3 data-section="dessert">Desserts</h3>
+            <div class="menu__item" data-cat="dessert"><div><div class="name">Flourless Chocolate Cake</div><div class="desc">Dark, dense, salt flake</div></div><div class="price">₹ 320</div></div>
+            <div class="menu__item" data-cat="dessert"><div><div class="name">Burnt Basque Cheesecake</div><div class="desc">Caramel kiss, cream</div></div><div class="price">₹ 350</div></div>
+            <div class="menu__item" data-cat="dessert"><div><div class="name">Walnut Brownie</div><div class="desc">Warm, fudgy, ice cream</div></div><div class="price">₹ 280</div></div>
+
+            <h3 data-section="coolers">Coolers & Milkshakes</h3>
+            <div class="menu__item" data-cat="coolers"><div><div class="name">Cucumber Mint Cooler</div><div class="desc">Lime, soda, basil</div></div><div class="price">₹ 160</div></div>
+            <div class="menu__item" data-cat="coolers"><div><div class="name">Iced Tea (House)</div><div class="desc">Peach, lemon, hibiscus</div></div><div class="price">₹ 130</div></div>
+            <div class="menu__item" data-cat="coolers"><div><div class="name">Vanilla Shake</div><div class="desc">Bourbon vanilla bean</div></div><div class="price">₹ 150</div></div>
+            <div class="menu__item" data-cat="coolers"><div><div class="name">Chocolate Shake</div><div class="desc">Belgian dark, malt</div></div><div class="price">₹ 160</div></div>
+            <div class="menu__item" data-cat="coolers"><div><div class="name">Strawberry Shake</div><div class="desc">Fresh berry, mascarpone</div></div><div class="price">₹ 150</div></div>
+          </div>
+
+          <p class="menu__empty" id="menuEmpty">Nothing in this chapter just yet. Try another.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== GALLERY ============== -->
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow center">— spaces —</span>
+          <h2 class="display">Light, leaves<br>&amp; <em>long mornings.</em></h2>
+          <p>A few corners of our world. Best experienced in person, with a cup in hand.</p>
+        </div>
+
+        <div class="bento">
+          <figure class="tile t-1 reveal">
+            <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=1400&q=80" alt="Sunlit corner with palms inside the café" loading="lazy"/>
+            <figcaption class="tile__cap">— the palm corner</figcaption>
+          </figure>
+          <figure class="tile t-2 reveal delay-1">
+            <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=900&q=80" alt="Pour over coffee being made" loading="lazy"/>
+            <figcaption class="tile__cap">— the slow pour</figcaption>
+          </figure>
+          <figure class="tile t-3 reveal delay-2">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80" alt="Latte art on a wood table" loading="lazy"/>
+            <figcaption class="tile__cap">— the art on top</figcaption>
+          </figure>
+          <figure class="tile t-4 reveal">
+            <img src="https://images.unsplash.com/photo-1442975631115-c4f7b05b8a2c?auto=format&fit=crop&w=900&q=80" alt="Reading nook with warm light" loading="lazy"/>
+            <figcaption class="tile__cap">— the reading nook</figcaption>
+          </figure>
+          <figure class="tile t-5 reveal delay-1">
+            <img src="https://images.unsplash.com/photo-1559305616-3f99cd43e353?auto=format&fit=crop&w=1400&q=80" alt="Plated avocado dish, breakfast moment" loading="lazy"/>
+            <figcaption class="tile__cap">— the breakfast plate</figcaption>
+          </figure>
+          <figure class="tile t-6 reveal delay-2">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=80" alt="Espresso machine close up" loading="lazy"/>
+            <figcaption class="tile__cap">— the bar</figcaption>
+          </figure>
+          <figure class="tile t-7 reveal">
+            <img src="https://images.unsplash.com/photo-1525480122447-64809d765a92?auto=format&fit=crop&w=1400&q=80" alt="Outdoor seating beneath palms" loading="lazy"/>
+            <figcaption class="tile__cap">— the verandah</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== RESERVE ============== -->
+    <section class="reserve section-pad" id="reserve">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow center">— reserve a table —</span>
+          <h2 class="display">Find your <em>quiet hour.</em></h2>
+          <p>Choose a date, a time, and how many of you we should set the palms for.</p>
+        </div>
+
+        <div class="reserve__wrap reveal">
+          <div class="reserve__intro">
+            <span class="eyebrow">No rush, ever</span>
+            <h2 class="display">Pick a moment.<br>We'll save the seat <em>under the palm.</em></h2>
+            <p>Tables are held for thirty minutes from your reserved time — perfect for a slow morning, a deep work block, or a long second cup. We'll send a quiet confirmation by phone.</p>
+
+            <div class="reserve__hours">
+              <div><span>Mon — Thu</span><strong>8 AM — 9 PM</strong></div>
+              <div><span>Fri — Sun</span><strong>8 AM — 10 PM</strong></div>
+              <div><span>Last seating</span><strong>30 min before close</strong></div>
+              <div><span>Hold</span><strong>30 min · free</strong></div>
+            </div>
+          </div>
+
+          <div>
+            <!-- TIMETABLE -->
+            <div class="tt">
+              <div class="tt__head">
+                <h3 id="ttMonth">— select a date —</h3>
+                <div class="tt__nav">
+                  <button id="ttPrev" aria-label="Previous week">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg>
+                  </button>
+                  <button id="ttNext" aria-label="Next week">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="tt__days" id="ttDays" role="tablist" aria-label="Pick a date"></div>
+              <div class="tt__slots" id="ttSlots" role="tablist" aria-label="Pick a time"></div>
+              <div class="tt__legend">
+                <span class="av"><i></i>Available</span>
+                <span class="lm"><i></i>Limited</span>
+                <span class="ft"><i></i>Full</span>
+              </div>
+            </div>
+
+            <!-- FORM -->
+            <form class="form" id="reserveForm" novalidate>
+              <input type="hidden" id="resDate" name="date">
+              <input type="hidden" id="resTime" name="time">
+
+              <div class="field">
+                <label for="resName">Full name</label>
+                <input id="resName" name="name" type="text" required placeholder="Aanya Mehta">
+              </div>
+              <div class="field">
+                <label for="resPhone">Phone</label>
+                <input id="resPhone" name="phone" type="tel" required placeholder="+91 ·····">
+              </div>
+              <div class="field">
+                <label for="resEmail">Email</label>
+                <input id="resEmail" name="email" type="email" required placeholder="hello@yourdomain.in">
+              </div>
+              <div class="field">
+                <label for="resParty">Party size</label>
+                <select id="resParty" name="party" required>
+                  <option value="">Select</option>
+                  <option>1 guest</option>
+                  <option>2 guests</option>
+                  <option>3 guests</option>
+                  <option>4 guests</option>
+                  <option>5 guests</option>
+                  <option>6+ guests (we'll call)</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="resNotes">Special requests <span style="text-transform:none;color:var(--ink-4)">(optional)</span></label>
+                <textarea id="resNotes" name="notes" rows="3" placeholder="Window seat, anniversary, allergies…"></textarea>
+              </div>
+              <p class="form__hint">— A space to pause: 30 minutes free, no rush, perfect for slow mornings, deep work &amp; unhurried conversations.</p>
+              <div class="form__submit">
+                <span style="font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--ink-3);text-transform:uppercase" id="resSummary">— pick a date &amp; time —</span>
+                <button type="submit" class="btn btn--primary btn--lg">Confirm reservation
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+              <div class="form__success" id="resSuccess" role="status">
+                Thank you. Your seat under the palm is held — we'll send a quiet confirmation shortly.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== TESTIMONIALS ============== -->
+    <section class="testi">
+      <div class="section-head reveal">
+        <span class="eyebrow center">— neighbours speak —</span>
+        <h2 class="display">A small <em>love letter</em><br>from the regulars.</h2>
+      </div>
+      <div class="testi__row">
+        <figure class="quote reveal">
+          <span class="stars">★ ★ ★ ★ ★</span>
+          <p>"Finally, a place in Delhi where the coffee quality matches the ambiance. The single‑origin pour over is incredible — and the palms make it all feel like a holiday."</p>
+          <figcaption class="who">— Priya M. · Vasant Vihar</figcaption>
+        </figure>
+        <figure class="quote reveal delay-1">
+          <span class="stars">★ ★ ★ ★ ★</span>
+          <p>"The 'no rush' philosophy is real. I walk in for a cortado, end up writing for two hours. Perfect for deep work — I'm here every morning now."</p>
+          <figcaption class="who">— Arjun K. · founder, neighbour</figcaption>
+        </figure>
+        <figure class="quote reveal delay-2">
+          <span class="stars">★ ★ ★ ★ ★</span>
+          <p>"Every detail is thoughtfully done — from the cup of coffee to the Spotify playlist to the way the light falls at four. Truly a special little world."</p>
+          <figcaption class="who">— Sarah T. · visitor from Bombay</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============== CONTACT ============== -->
+    <section class="contact section-pad" id="contact">
+      <div class="container">
+        <div class="contact__grid">
+          <div class="contact__info reveal">
+            <span class="eyebrow">— visit us —</span>
+            <h2 class="display">Come sit beneath<br>the <em>palms.</em></h2>
+            <p>We're tucked into Oasis Bhawan in Vasant Kunj — a calm green corner ten minutes from the metro and a few breaths from Delhi's rush.</p>
+
+            <div class="contact__list">
+              <a class="contact__item" href="https://l.instagram.com/?u=https%3A%2F%2Fmaps.app.goo.gl%2FbFnE5n3Vq2yyWhrV8%3Fg_st%3Dic%26utm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnIgcUVCZ70FqqXk1TMPxi6auS8txUdve19KWZanPixksGdp1c7x8cPlcaktI_aem_KcaOQv80IUdNzKB-MsuOIQ&e=AUB7YBgPCkitshNwV5QfZZ3ZW7rkTj5ZS7oV_V16H35kE5gn1HmDROH_sngscpgrFXmR5o5ZI47P2BCa6t-TiwkyEKP-QkdhFalxSO2mUmntU2nVooyb_cAbOceGEb07F0Rmd9esbyOP" target="_blank" rel="noreferrer">
+                <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s-7-7.58-7-12a7 7 0 1 1 14 0c0 4.42-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+                <span>
+                  <span class="lb">Address</span>
+                  <span class="vl">Oasis Bhawan, Vasant Kunj, New Delhi 110070</span>
+                </span>
+              </a>
+              <a class="contact__item" href="tel:+919958361515">
+                <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+                <span>
+                  <span class="lb">Phone</span>
+                  <span class="vl">+91 99583 61515</span>
+                </span>
+              </a>
+              <a class="contact__item" href="mailto:hello@coffeeunderpalms.in">
+                <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg></span>
+                <span>
+                  <span class="lb">Email</span>
+                  <span class="vl">hello@coffeeunderpalms.in</span>
+                </span>
+              </a>
+              <a class="contact__item" href="https://instagram.com/cupatvk" target="_blank" rel="noreferrer">
+                <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg></span>
+                <span>
+                  <span class="lb">Instagram</span>
+                  <span class="vl">@cupatvk</span>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact__map reveal delay-2">
+            <iframe
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Oasis+Bhawan+Vasant+Kunj+New+Delhi&output=embed"
+              title="Coffee Under Palms — Oasis Bhawan, Vasant Kunj">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== FOOTER ============== -->
+    <footer class="foot">
+      <div class="foot__grid">
+        <div class="foot__brand">
+          <div class="display">Coffee under <em>palms.</em></div>
+          <p>"Good coffee. No rush. A space to pause." — single‑estate Indian Arabica, served beneath palms in Vasant Kunj.</p>
+        </div>
+        <div>
+          <h4>Wander</h4>
+          <ul>
+            <li><a href="#about">Story</a></li>
+            <li><a href="#signatures">Signatures</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#gallery">Spaces</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Visit</h4>
+          <ul>
+            <li><a href="#reserve">Reserve a table</a></li>
+            <li><a href="tel:+919958361515">+91 99583 61515</a></li>
+            <li><a href="mailto:hello@coffeeunderpalms.in">hello@coffeeunderpalms.in</a></li>
+            <li><a href="https://maps.google.com/?q=Oasis+Bhawan+Vasant+Kunj+New+Delhi" target="_blank" rel="noreferrer">Get directions</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Hours</h4>
+          <ul>
+            <li>Mon — Thu · 8 AM — 9 PM</li>
+            <li>Fri — Sun · 8 AM — 10 PM</li>
+            <li>Public holidays · 9 AM — 9 PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot__bottom">
+        <span>© 2024 · Coffee Under Palms · Made slow in New Delhi</span>
+        <div class="socials">
+          <a href="https://instagram.com/cupatvk" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="tel:+919958361515">Call</a>
+          <a href="mailto:hello@coffeeunderpalms.in">Email</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
