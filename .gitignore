@@ -21,3 +21,11 @@ yarn-error.log*
 dist/
 build/
 .netlify/
+
+# Planning deliverables (not part of the website)
+CAF-Digital-Growth-Roadmap.pdf
+generate_plan_pdf.py
+
+# Unused original source images (kept locally, not deployed)
+cups.png
+basil.png
