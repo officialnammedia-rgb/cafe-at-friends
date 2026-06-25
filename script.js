@@ -17,10 +17,10 @@
   const heatFill = $('.loader__heat-fill');
   const heatText = $('.loader__heat-text');
   const SVG_HOLD_MS = 4400;     // timing of the SVG fallback animation
-  const VIDEO_CAP_MS = 10000;   // safety: never trap a visitor on the loader
+  const VIDEO_CAP_MS = 30000;   // absolute failsafe: never trap a visitor on the loader
   const END_LEAD_S = 0.5;       // hand off this many seconds before the clip ends
-  const KNOWN_DUR_S = 8;        // loader.mp4 length; used when the browser can't
-                                // report duration (e.g. server without range support)
+  const KNOWN_DUR_S = 8;        // loader.mp4 length in seconds (drives the heat
+                                // strip scale and the handoff point)
   const loaderReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Coffee "heat strip": cold/white -> hot/red, tracking the film's progress.
@@ -88,37 +88,48 @@
 
   const startVideoLoader = () => {
     loader.classList.add('is-video');
-    // Kick off the blurred backdrop copy (best-effort; it's purely decorative).
-    if (loaderFilmBg && loaderFilmBg.play) {
-      const pb = loaderFilmBg.play();
-      if (pb && pb.catch) pb.catch(() => {});
-    }
-    // Smoothly track the film's progress for the heat strip, and hand off to the
-    // homepage just before the final push-in ends — one continuous move.
-    // Drive the heat strip on a wall-clock timer over the clip's known length,
-    // not the video's reported time — some servers report no/Infinite duration,
-    // which left the fill frozen at 0%.
-    let startTs = 0;
-    const tick = (ts) => {
-      if (!startTs) startTs = ts;
-      const elapsed = (ts - startTs) / 1000;
-      updateHeat(elapsed / KNOWN_DUR_S);
-      if (elapsed >= KNOWN_DUR_S - END_LEAD_S) { finishLoad(); return; }
+
+    let started = false;
+
+    // The heat strip AND the handoff follow the video's ACTUAL playback position
+    // (currentTime), so the bar waits while the clip is still buffering and the
+    // film is never cut short by a timer that ran ahead during download.
+    const tick = () => {
+      const t = loaderVideo.currentTime || 0;
+      updateHeat(t / KNOWN_DUR_S);
+      if (started && t >= KNOWN_DUR_S - END_LEAD_S) { finishLoad(); return; }
       rafId = requestAnimationFrame(tick);
     };
     rafId = requestAnimationFrame(tick);
+
     loaderVideo.addEventListener('ended', finishLoad, { once: true });
     loaderVideo.addEventListener('error', () => {
       loader.classList.remove('is-video');
       setTimeout(finishLoad, SVG_HOLD_MS);
     }, { once: true });
+
+    // Start the blurred backdrop ONLY once the main film is actually playing, so
+    // it doesn't download in parallel and slow the main clip's start.
+    loaderVideo.addEventListener('playing', () => {
+      if (started) return;
+      started = true;
+      if (loaderFilmBg && loaderFilmBg.play) {
+        const pb = loaderFilmBg.play();
+        if (pb && pb.catch) pb.catch(() => {});
+      }
+    });
+
     const p = loaderVideo.play();
     if (p && p.catch) p.catch(() => {
       // Autoplay blocked — drop back to the SVG fallback.
       loader.classList.remove('is-video');
       setTimeout(finishLoad, SVG_HOLD_MS);
     });
-    setTimeout(finishLoad, VIDEO_CAP_MS); // hard safety cap
+
+    // Safety nets: if the film never starts playing, bail after a short wait;
+    // plus an absolute failsafe in case it stalls indefinitely mid-play.
+    setTimeout(() => { if (!started) finishLoad(); }, 12000);
+    setTimeout(finishLoad, VIDEO_CAP_MS);
   };
 
   const startLoader = () => {
